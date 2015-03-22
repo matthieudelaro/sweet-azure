@@ -1,0 +1,39 @@
+{
+  "name": "sweet-azure",
+  "version": "0.5.0",
+  "description": "To enhance azure node sdk, and to provide a client API to upload blobs.",
+  "main": "SweetAzure.js",
+  "scripts": {
+    "test": "mocha test.js --no-timeouts",
+    "start": "echo This is a library. You may use it in your own project or test it with \"npm test\"."
+  },
+  "keywords": [
+    "azure",
+    "blob",
+    "storage",
+    "sas",
+    "logger",
+    "firebase"
+  ],
+  "author": "Matthieu de La Roche Saint-André",
+  "license": "MIT Licence",
+  "dependencies": {
+    "azure-storage": "^0.4.2",
+    "body-parser": "^1.12.2",
+    "clone": "^1.0.1",
+    "dateformat": "^1.0.11",
+    "dotenv": "^1.0.0",
+    "express": "^4.12.3",
+    "firebase": "^2.2.2",
+    "node-uuid": "^1.4.3",
+    "q": "^1.2.0",
+    "tracer": "^0.7.3"
+  },
+  "devDependencies": {
+    "expect": "^1.6.0",
+    "mocha": "^2.2.1",
+    "nodemon": "1.2.1",
+    "should": "^5.2.0",
+    "supertest": "^0.15.0"
+  }
+}
