@@ -1,6 +1,6 @@
 {
   "name": "sweet-azure",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "A short, secured, and easy to use Azure Storage.",
   "main": "SweetAzure.js",
   "scripts": {

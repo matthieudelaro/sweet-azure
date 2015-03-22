@@ -3,6 +3,7 @@
 A short, secured, and easy to use Azure Storage.
 
 ## Server side
+
 This module provides the following :
 
   * SweetAzure.Storage
@@ -53,7 +54,8 @@ settings.firebaseReference : (optional) an initialised firebase node.
 
 settings.enable = (optional) a boolean. Defaults to process.env.SWEETAZURE_LOGGER_FIREBASE_ENABLE or true;
 
-##Client side
+## Client side
+
 Not available yet (still testing).
 
 ### Installation
