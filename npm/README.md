@@ -55,6 +55,7 @@ settings.enable = (optional) a boolean. Defaults to process.env.SWEETAZURE_LOGGE
 
 ##Client side
 Not available yet (still testing).
+
 ### Installation
 Install it using bower :
 ```sh
