@@ -99,6 +99,34 @@ module.exports = (function() {
             }
         };
 
+        Configurations.newGroup = function(list) {
+            list = list || [];
+
+            var methods = ['trace', 'log', 'info', 'warn', 'debug', 'error'];
+
+            function forward(method, argumentsToForward) {
+                for (var i = 0; i < list.length; i++) {
+                    try {
+                        var m = list[i][method];
+                        m.apply(m, argumentsToForward);
+                    } catch (err) {}
+                }
+            }
+
+            var res = {
+                add: function(element) {
+                    list.push(element);
+                }
+            };
+
+            methods.forEach(function(value) {
+                res[value] = function(args) {
+                    forward(value, arguments);
+                };
+            });
+            return res;
+        };
+
         return Configurations;
     })();
 
