@@ -57,7 +57,7 @@ Provides several loggers.
 
 ##### SweetAzure.Logger.Configurations.newFirebase(settings)
 
-This logger enables you to log directly to Firebase. This is espacially useful if you don't have access to regular logs (with mobile services for example)
+This logger enables you to log directly to Firebase. This is espacially useful if you don't have access to standard output (with Azure Mobile Services for example)
 
 settings.firebaseUrl : (optional) the URL of your firebase node.
 Defaults to process.env.SWEETAZURE_LOGGER_FIREBASE_URL;
