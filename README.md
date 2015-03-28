@@ -86,7 +86,15 @@ var logger2 = Logger.Configurations.newFirebase({
 });
 logger2.log("Log Hello World! to an other Firebase node");
 ```
-
+Then you may want to set up Security & Rules of Firebase to make  sure that nobody except you can read the data that you are logging:
+```json
+{
+    "rules": {
+        ".read": false,
+        ".write": true
+    }
+}
+```
 ## Client side
 
 Not available yet (still testing).
