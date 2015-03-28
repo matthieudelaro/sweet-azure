@@ -1,6 +1,6 @@
 # sweet-azure
 
-A short, secured, and easy to use Azure Storage.
+A short, secured, and easy way to use Azure Storage.
 
 ## Server side
 
@@ -16,6 +16,18 @@ This module provides the following :
 $ npm install sweet-azure
 ```
 
+### Configuration
+
+You may use environment variables to configure SweetAzure. Here is an example of .env file to set up your dev environment using [dotenv](https://www.npmjs.com/package/dotenv "dotenv") :
+```bash
+SWEETAZURE_STORAGE_STORAGE_ACCOUNT=your_storage_account_name
+SWEETAZURE_STORAGE_ACCESS_KEY=the_access_key_of_your_storage_account
+SWEETAZURE_STORAGE_CONTAINER_NAME=the_name_of_the_container_you_want_sweet-azure_to_work_on
+SWEETAZURE_STORAGE_SAS_EXPIRY_TIME_IN_MINUTES=duration_of_validity_of_sas_generated_by_sweet-azure
+SWEETAZURE_LOGGER_FIREBASE_URL=https://youraccount.firebaseio.com/lognode
+```
+NB : You may reference this .env file in your .gitignore, and define environment variables for production using [Azure Portal](https://manage.windowsazure.com "azure portal") 
+
 ### API
 
 ```js
@@ -23,7 +35,7 @@ var SweetAzure = require('sweet-azure');
 ```
 
 #### SweetAzure.Storage
-Provide features to upload files to Azure Blob Storage using SAS.
+Provides features to upload files to Azure Blob Storage using SAS.
 Basic example :
 ```js
 var express = require('express'),
@@ -41,19 +53,48 @@ Storage.setupStorageAccount().then(function() {
 ```
 
 #### SweetAzure.Logger
-Provide several loggers.
+Provides several loggers.
 
 ##### SweetAzure.Logger.Configurations.newFirebase(settings)
 
-This logger enables you to log directly to Firebase. This is espacially useful if you don't have access to regular logs (with mobile services for example)
+This logger enables you to log directly to Firebase. This is espacially useful if you don't have access to standard output (with Azure Mobile Services for example)
 
-settings.firebaseUrl : the URL of your firebase node.
+settings.firebaseUrl : (optional) the URL of your firebase node.
 Defaults to process.env.SWEETAZURE_LOGGER_FIREBASE_URL;
 
 settings.firebaseReference : (optional) an initialised firebase node.
 
 settings.enable = (optional) a boolean. Defaults to process.env.SWEETAZURE_LOGGER_FIREBASE_ENABLE or true;
 
+Common use :
+```js
+'use strict';
+
+var dotenv = require('dotenv');
+dotenv.load();
+
+var SweetAzure = require('sweet-azure'),
+    Logger = SweetAzure.Logger;
+
+// Create a logger using environment variables :
+var logger = Logger.Configurations.newFirebase();
+logger.log("Log Hello World! to Firebase");
+
+// or overriding environment variables by supplying settings :
+var logger2 = Logger.Configurations.newFirebase({
+    firebaseUrl: "https://myaccount.firebaseio.com/azure"
+});
+logger2.log("Log Hello World! to an other Firebase node");
+```
+Then you may want to set up Security & Rules of Firebase to make  sure that nobody except you can read the data that you are logging:
+```json
+{
+    "rules": {
+        ".read": false,
+        ".write": true
+    }
+}
+```
 ## Client side
 
 Not available yet (still testing).
