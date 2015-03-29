@@ -60,7 +60,8 @@ module.exports = (function() {
 
             blobService.createContainerIfNotExists(
                 conf.containerName,
-                { publicAccessLevel: azure.BlobUtilities.BlobContainerPublicAccessType.BLOB},
+                // { publicAccessLevel: azure.BlobUtilities.BlobContainerPublicAccessType.BLOB},
+                {},// can't neither list blobs, nor read a blob, nor write a blob, without a SAS
                 function(error) {
                     if (!error) {
                         deferred.resolve();
