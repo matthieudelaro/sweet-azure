@@ -114,17 +114,8 @@ var SweetAzure = require('sweet-azure');
 ```
 
 ### API
+
 #### With AngularJS
-If AngularJS is not used on the page, SweetAzure relies on [Kriskowal's promises](https://github.com/kriskowal/q "q") and on [jQuery](https://github.com/jquery/jquery "jQuery"). It may define itself using RequireJS, SES, CommonJS, or as a global variable called SweetAzure.
-
-```js
-SweetAzure.configure({/* This step is optional*/});
-SweetAzure.upload({file: myFormInputFile[0]}).then(function(){
-    console.log("The file has been successfully uploaded.");
-})
-```
-
-#### Without AngularJS
 If AngularJS is used on the page, SweetAzure does not declare itself as a global variable, but makes itself available as an AngularJS module called SweetAzure.
 
 ```js
@@ -133,6 +124,16 @@ angular.module('YourModule', [])
             function   ( SweetAzure) {
     // enjoy SweetAzure here
 }]);
+```
+
+#### Without AngularJS
+If AngularJS is not used on the page, SweetAzure relies on [Kriskowal's promises](https://github.com/kriskowal/q "q") and on [jQuery](https://github.com/jquery/jquery "jQuery"). It may define itself using RequireJS, SES, CommonJS, or as a global variable called SweetAzure.
+
+```js
+SweetAzure.configure({/* This step is optional*/});
+SweetAzure.upload({file: myFormInputFile[0]}).then(function(){
+    console.log("The file has been successfully uploaded.");
+})
 ```
 
 ## License
