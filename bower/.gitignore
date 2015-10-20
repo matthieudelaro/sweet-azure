@@ -1,6 +1,0 @@
-node_modules
-bower_components
-azure.err
-*.publishsettings
-.env
-npm-debug.log
