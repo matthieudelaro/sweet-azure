@@ -1,6 +1,6 @@
 {
   "name": "sweet-azure",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "authors": [
     "Matthieu de La Roche Saint-André"
   ],
@@ -32,5 +32,3 @@
     "q": "1.0.1"
   }
 }
-
-
