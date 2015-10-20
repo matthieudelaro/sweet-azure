@@ -26,7 +26,7 @@ SWEETAZURE_STORAGE_CONTAINER_NAME=the_name_of_the_container_you_want_sweet-azure
 SWEETAZURE_STORAGE_SAS_EXPIRY_TIME_IN_MINUTES=duration_of_validity_of_sas_generated_by_sweet-azure
 SWEETAZURE_LOGGER_FIREBASE_URL=https://youraccount.firebaseio.com/lognode
 ```
-NB : You may reference this .env file in your .gitignore, and define environment variables for production using [Azure Portal](https://manage.windowsazure.com "azure portal") 
+NB : You may reference this .env file in your .gitignore, and define environment variables for production using [Azure Portal](https://manage.windowsazure.com "azure portal")
 
 ### API
 
