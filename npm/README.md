@@ -26,7 +26,7 @@ SWEETAZURE_STORAGE_CONTAINER_NAME=the_name_of_the_container_you_want_sweet-azure
 SWEETAZURE_STORAGE_SAS_EXPIRY_TIME_IN_MINUTES=duration_of_validity_of_sas_generated_by_sweet-azure
 SWEETAZURE_LOGGER_FIREBASE_URL=https://youraccount.firebaseio.com/lognode
 ```
-NB : You may reference this .env file in your .gitignore, and define environment variables for production using [Azure Portal](https://manage.windowsazure.com "azure portal") 
+NB : You may reference this .env file in your .gitignore, and define environment variables for production using [Azure Portal](https://manage.windowsazure.com "azure portal")
 
 ### API
 
@@ -97,8 +97,6 @@ Then you may want to set up Security & Rules of Firebase to make  sure that nobo
 ```
 ## Client side
 
-Not available yet (still testing).
-
 ### Installation
 Install it using bower :
 ```sh
@@ -114,7 +112,19 @@ var SweetAzure = require('sweet-azure');
 ```
 
 ### API
+
 #### With AngularJS
+If AngularJS is used on the page, SweetAzure does not declare itself as a global variable, but makes itself available as an AngularJS module called SweetAzure.
+
+```js
+angular.module('YourModule', [])
+.factory('YourModule', ['SweetAzure',
+            function   ( SweetAzure) {
+    // enjoy SweetAzure here
+}]);
+```
+
+#### Without AngularJS
 If AngularJS is not used on the page, SweetAzure relies on [Kriskowal's promises](https://github.com/kriskowal/q "q") and on [jQuery](https://github.com/jquery/jquery "jQuery"). It may define itself using RequireJS, SES, CommonJS, or as a global variable called SweetAzure.
 
 ```js
@@ -124,15 +134,23 @@ SweetAzure.upload({file: myFormInputFile[0]}).then(function(){
 })
 ```
 
-#### Without AngularJS
-If AngularJS is used on the page, SweetAzure does not declare itself as a global variable, but makes itself available as an AngularJS module called SweetAzure.
+### Testing
 
-```js
-angular.module('YourModule', [])
-.factory('YourModule', ['SweetAzure',
-            function   ( SweetAzure) {
-    // enjoy SweetAzure here
-}]);
+You must configure a blob storage on Microsoft Azure to run the tests.
+You can put credentials in a .env file to have them loaded automatically by the server script, as described above.
+
+#### Testing Manually
+Run server script which will handle requests of the webpage :
+```sh
+$ node ./bower/test/simpleServerForTests.js
+```
+
+Then open the webpage ./bower/test/index.html
+
+#### Testing with Mocha
+This will test the library with node, and run a server when needed :
+```sh
+$ cd ./bower/test; npm test;
 ```
 
 ## License

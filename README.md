@@ -97,8 +97,6 @@ Then you may want to set up Security & Rules of Firebase to make  sure that nobo
 ```
 ## Client side
 
-Not available yet (still testing).
-
 ### Installation
 Install it using bower :
 ```sh
@@ -134,6 +132,25 @@ SweetAzure.configure({/* This step is optional*/});
 SweetAzure.upload({file: myFormInputFile[0]}).then(function(){
     console.log("The file has been successfully uploaded.");
 })
+```
+
+### Testing
+
+You must configure a blob storage on Microsoft Azure to run the tests.
+You can put credentials in a .env file to have them loaded automatically by the server script, as described above.
+
+#### Testing Manually
+Run server script which will handle requests of the webpage :
+```sh
+$ node ./bower/test/simpleServerForTests.js
+```
+
+Then open the webpage ./bower/test/index.html
+
+#### Testing with Mocha
+This will test the library with node, and run a server when needed :
+```sh
+$ cd ./bower/test; npm test;
 ```
 
 ## License

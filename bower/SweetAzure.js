@@ -463,11 +463,7 @@ if (typeof angular !== "undefined" &&
             function ($q,   $http) {
         return new SweetAzure($q, $http);
     }]);
-
-    console.log("angular:", angular);
 } else {
-    console.log("angularjs is not defined");
-
     var promiseLibrary;
     if (typeof $q !== "undefined") {
         promiseLibrary = $q;
@@ -475,6 +471,8 @@ if (typeof angular !== "undefined" &&
         promiseLibrary = Q;
     } else if (typeof require !== "undefined") {
         promiseLibrary = require('q');
+    } else {
+        throw new Error("SweetAzure needs either $q, Q, or q in order to run properly.");
     }
 
     var jqueryLibrary;
@@ -486,6 +484,8 @@ if (typeof angular !== "undefined" &&
         } else {
             jqueryLibrary = require('jquery');
         }
+    } else {
+        throw new Error("SweetAzure needs AngularJS or jQuery in order to run properly.");
     }
 
     // return new SweetAzure(promiseLibrary);
