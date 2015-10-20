@@ -1,0 +1,21 @@
+{
+  "name": "sweet-azure",
+  "homepage": "https://github.com/matthieudelaro/sweet-azure",
+  "authors": [
+    "Matthieu de La Roche Saint-André"
+  ],
+  "description": "A short, secure, and easy to use Azure Storage. Provides a client API to upload/download files in Azure Blob Storage using SAS.",
+  "main": "bower/SweetAzure.js",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
