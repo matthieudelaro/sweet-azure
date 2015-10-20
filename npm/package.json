@@ -1,7 +1,7 @@
 {
   "name": "sweet-azure",
   "version": "0.5.5",
-  "description": "A short, secured, and easy to use Azure Storage.",
+  "description": "A short, secure, and easy to use Azure Storage.",
   "main": "SweetAzure.js",
   "scripts": {
     "test": "mocha test.js --no-timeouts",
