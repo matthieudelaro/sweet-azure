@@ -1,0 +1,34 @@
+{
+  "name": "sweet-azure",
+  "version": "0.5.0",
+  "authors": [
+    "Matthieu de La Roche Saint-André"
+  ],
+  "description": "Provides a client API to upload/download files in Azure Blob Storage using SAS.",
+  "main": "SweetAzure.js",
+  "keywords": [
+    "azure",
+    "blob",
+    "storage",
+    "sas"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "angularjs": "~1.3.15",
+    "bootstrap": "~3.3.4",
+    "underscore": "~1.8.2",
+    "jqlite": "~1.1.1",
+    "q": "~2.0.2"
+  },
+  "resolutions": {
+    "q": "1.0.1"
+  }
+}
