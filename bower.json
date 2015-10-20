@@ -5,7 +5,7 @@
     "Matthieu de La Roche Saint-André"
   ],
   "description": "A short, secure, and easy to use Azure Storage. Provides a client API to upload/download files in Azure Blob Storage using SAS.",
-  "main": "SweetAzure.js",
+  "main": "bower/SweetAzure.js",
   "keywords": [
     "azure",
     "blob",
@@ -18,7 +18,10 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "bower/test",
+    "npm",
+    "tests",
+    "bower/tests"
   ],
   "dependencies": {
     "jquery": "~2.1.3",
