@@ -1,6 +1,6 @@
 # sweet-azure
 
-A short, secured, and easy way to use Azure Storage.
+A short, secure, and easy way to use Azure Storage.
 
 ## Server side
 
